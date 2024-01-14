@@ -12,7 +12,8 @@
   <body>
     <div class="scores"><a href="highscores.html">View Highscores</a></div>
 
-    <div class="timer">Time: <span id="time">0</span></div>
+    <div class="timer">Time: <span id="time">60</span></div>
+    <!-- change 60 here in the html; value was 0 before -->
 
     <div class="wrapper">
       <div id="start-screen" class="start">
@@ -26,8 +27,36 @@
       </div>
 
       <div id="questions" class="hide">
-        <h2 id="question-title"></h2>
+        <h2 id="question-title">This is where the question goes REPLACE THIS</h2>
         <div id="choices" class="choices"></div>
+          <ul> 
+            <!-- why is this still an ol after I change it to a ul??-->
+            <li id="choice1" class="choices">
+              <button id="answer">
+                Option 1
+                <!-- replace the above holding text with answer ref here -->
+              </button> 
+            </li>
+            <li id="choice2" class="choices">
+              <button id="answer">
+                Option 2
+                <!-- replace the above holding text with answer ref here -->
+              </button> 
+            </li>
+            <li id="choice3" class="choices ">
+              <button id="answer">
+                Option 3
+                <!-- replace the above holding text with answer ref here -->
+              </button> 
+            </li>
+            <li id="choice4" class="choices ">
+              <button id="answer">
+                Option 4
+                <!-- replace the above holding text with answer ref here -->
+              </button> 
+            </li>
+          </ul> 
+          <!-- why is the ul still behaving like an ol after I changed it??? -->
       </div>
 
       <div id="end-screen" class="hide">

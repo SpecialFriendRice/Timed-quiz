@@ -1,7 +1,7 @@
 //QUESTIONS
-//question goes in question-title h2
-//add ordered list with four child list elements to div id questions
-//each child element needs to be a button
+//question goes in question-title <h2>
+//add ordered list with four child list elements to div id questions - I HAVE PUT THIS IN THE HTML TO BEGIN WITH
+//each child element needs to be a button - I HAVE PUT THIS IN THE HTML TO BEGIN WITH
 //text of each button is an answer from the potential answers array (?)
 
 //HIGHSCORES
@@ -34,3 +34,74 @@
 //score is kept as running total (local storage?)
 //create a variable finalTally that feeds to end-screen div in final-score span
 //decide on points value for a correct answer (is the points value related to the amount of time left?)
+
+//VARIABLES 
+//Initially used querySelector but getElementbyID is marginally faster!
+var startBtnEl = document.getElementById("start");
+var startScrEl = document.getElementById("start-screen");
+var questionsEl = document.getElementById("questions");
+var questionTitleEl = document.getElementById("question-title");
+var answerEl = document.getElementById("answer"); //will this work with the four list element buttons that now all have the id "answer"? 
+
+var timeEl = document.querySelector("#time");
+var timeLeft = 60 //reduce this if necessary
+
+//Hide div with id = start screen by adding attribute class = hide? It already has class = start; is it fine to give it an additional class - yes, apparently but how? classList.add Do I setAttribute or getAttribute and concatenate? Does it matter if it loses class = start - it has a centered CSS style
+
+//TRYING TO GET COUNTDOWN TO WORK
+//should this function be inside another one?
+//do I have to do it with setInterval?
+// function countDown () {
+//     timeLeft--;
+//     //other 
+//     if (timeLeft === 0) {
+//         alert("You ran out of time")
+//         //reset clock? clearInterval?
+//     }
+// }
+
+//see if the below countdown works
+// var countdown = setInterval(function() {
+//         timeLeft--;
+//         if(timeLeft === 0) {
+//          alert("you have run out of time")
+//         }
+// });
+
+
+
+//  function setTime() {
+//   // Sets interval in variable
+//   var countdown = setInterval(function() {
+//     timeLeft--;
+//  
+//     if(timeLeft === 0) {
+//      //do what?
+//     }
+
+//   }, 1000);
+// }
+
+function startQuiz () {
+    // hide the div with id = start-screen, tried it first by simply changing class from start to hide using setAttribute, but then found classList.add
+    startScrEl.classList.add("hide") 
+    // show the div with id = questions; I have done this by removing the class attribute but should I use some other method or replace the class? 
+    questionsEl.classList.remove("hide")//why does class have to be in quotes?
+    //randomise questions??? Does this go in this function? Should I make a function populateQuestion or something?
+
+    //START TIMER
+    //why can't I declare this function here like this? Does it have to be outside this function? Do I have it as a stand alone function and call it on click of the start button?
+    //function countDown() - do I use setInterval??
+    //setInterval ();
+    
+    
+}
+
+
+function setQuestion () {//is this the right place to DEFINE THIS FUNCTION?
+    alert("your setQuestion function is working");
+//questionTitleEl.textContent = "holding text" //this needs to reference a question from questions.js, but what is the path? is it relative to the index.html i.e. ./assets/js/questions.js??
+}
+
+//Event listener for click on start button
+startBtnEl.addEventListener("click", startQuiz); //do I add the startTimer function here too?
