@@ -47,6 +47,8 @@ ol {
 li {
   padding: 5px;
   list-style: decimal inside none;
+  /* list-style: none; */
+  /* do I want to take out the decimal style and put the number inside the button? */
 }
 
 li:nth-child(odd) {

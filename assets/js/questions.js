@@ -4,33 +4,37 @@
 
 //Questions and possible answers need to be an array of objects; possible answers also need to be in a subarray. This will allow for RANDOMISATION 
 //do i put true and false in each answer rather than pick out the correct with an "if?" try the first way initially
-var allQs [
- { question: "How many beans make five?"
+
+
+
+var allQs = [
+
+ { question: "How many beans make five?",
     answers: [
         {option:"two", torf: false},
         {option:"three", torf: false},
         {option:"four", torf: false},
         {option:"five", torf: true},
-        ];
- }
+        ],
+ },
 
- { question: "What type of animal has wings?"
+ { question: "What type of animal has wings?",
     answers: [
         {option:"shark", torf: false},
         {option:"warthog", torf: false},
         {option:"swan", torf: true},
         {option:"hedgehog", torf: false},
-        ];
- }
+        ],
+    },
 
- { question: "What is brie?"
+ { question: "What is brie?",
     answers: [
         {option:"a garment", torf: false},
         {option:"a cheese", torf: true},
         {option:"a form of government", torf: false},
         {option:"a colour", torf: false},
-        ];
- }
+        ],
+ },
 
 ]
 

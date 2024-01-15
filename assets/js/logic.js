@@ -29,6 +29,7 @@
 //possible feedback responses written and put in array (?)
 //feedback responses appear in the feedback div when an answer button is clicked
 //when is class changed from hide?
+//Suggested feedback responses: simply true or false taken from object or correct/wrong - 10 second penalty
 
 //SCORE
 //score is kept as running total (local storage?)
@@ -41,10 +42,13 @@ var startBtnEl = document.getElementById("start");
 var startScrEl = document.getElementById("start-screen");
 var questionsEl = document.getElementById("questions");
 var questionTitleEl = document.getElementById("question-title");
-var answerEl = document.getElementById("answer"); //will this work with the four list element buttons that now all have the id "answer"? 
+var answerBtn = document.getElementById("answer"); //will this work with the four list element buttons that now all have the id "answer"? 
+
+var answerBack = document.getElementById("feedback");
 
 var timeEl = document.querySelector("#time");
 var timeLeft = 60 //reduce this if necessary
+
 
 //Hide div with id = start screen by adding attribute class = hide? It already has class = start; is it fine to give it an additional class - yes, apparently but how? classList.add Do I setAttribute or getAttribute and concatenate? Does it matter if it loses class = start - it has a centered CSS style
 
@@ -83,6 +87,7 @@ var timeLeft = 60 //reduce this if necessary
 // }
 
 function startQuiz () {
+
     // hide the div with id = start-screen, tried it first by simply changing class from start to hide using setAttribute, but then found classList.add
     startScrEl.classList.add("hide") 
     // show the div with id = questions; I have done this by removing the class attribute but should I use some other method or replace the class? 
@@ -94,14 +99,40 @@ function startQuiz () {
     //function countDown() - do I use setInterval??
     //setInterval ();
     
+    var questionTitleEl = document.getElementById("question-title");
     
+  
+    function setQuestion () {//is this the right place to DEFINE THIS FUNCTION?
+        //alert("your setQuestion function is working");
+        
+        questionTitleEl.textContent = "question holding text"; 
+        //this needs to reference a question from questions.js, but what is the path? is it relative to the index.html i.e. ./assets/js/questions.js??
+        answerBtn.textContent = "answer holding text"; 
+        //this FOUR TIMES OVER needs to reference a question from questions.js, but what is the path? is it relative to the index.html i.e. ./assets/js/questions.js??
+        
+    }
+        setQuestion () 
+
+
+
+        
 }
 
 
-function setQuestion () {//is this the right place to DEFINE THIS FUNCTION?
-    alert("your setQuestion function is working");
-//questionTitleEl.textContent = "holding text" //this needs to reference a question from questions.js, but what is the path? is it relative to the index.html i.e. ./assets/js/questions.js??
-}
+//where does the checkAns function sit?
+        function checkAns () {
+            if (torf = true){
+                
+            } else {
+
+            }
+        }
+        checkAns()
+
 
 //Event listener for click on start button
 startBtnEl.addEventListener("click", startQuiz); //do I add the startTimer function here too?
+
+//Event listener for answer buttons
+answerBtn.addEventListener("click", checkAns);
+//need to complete and place the checkAns function
